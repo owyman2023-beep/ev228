@@ -25,9 +25,9 @@ def map(in_da, out_path='', out_name=''):
     image = plt.pcolormesh(lons, lats, in_da)
     plt.xlabel('longitude')
     plt.ylabel('latitude')
-    plt.title('ERA5 10 metre wind speed (m/s) from 1980-1989')
+    plt.title('Cumulative Snowfall in Colorado from 1940-2024')
     cb = plt.colorbar(image, shrink=.75, orientation="vertical", pad=.02)
-    cb.set_label('m/s')
+    cb.set_label('in')
     plt.savefig(out_path + out_name, dpi=400)
 
 def bar(in_df, in_x=None, out_path='', out_name=''):
