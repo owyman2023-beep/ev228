@@ -13,7 +13,7 @@ def import_ghcn(file_path='', var=''):
     ''' Import GHCN weather station data '''
     df = pd.read_csv(file_path)
     df_data = df[var]
-    df_yr = df['Year']
+    df_yr = df['YEAR']
 
     return df_data, df_yr
 
