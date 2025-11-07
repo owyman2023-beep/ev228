@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import xarray as xr
+import cartopy.crs as ccrs
 
 path = '/Users/owenwyman/Data/ev228_data/individual_project/'
 fn = 'faf2d27731ed6827c0cb7c284be3f43b.nc'
@@ -11,11 +12,16 @@ out_path = '/Users/owenwyman/Data/ev228_data/figures/'
 out_fn = '1_proj.png'
 
 
-
 da = fi.import_era5(file_path=path + fn, var='csf')
 da_timemn = da.mean(dim='valid_time')
 # da_toplot = da_timemn 
 fp.map(da_timemn, out_path=out_path, out_name=out_fn)
+
+ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
+ax.coastlines(resolution='10m')
+ax.add_feature(cartopy.feature.STATES, linestyle=':')
+ax.add_feature(cartopy.feature.BORDERS, linestyle='--')
+
 
 
 
