@@ -10,9 +10,9 @@ def timeseries(in_df, in_x=None, out_path='', out_name=''):
 
     plt.plot(in_x, in_df, color="#2b63dc", linewidth=2.5)
     plt.xlabel('Years')
-    plt.xlim(1892, 2025)
+    plt.xlim(1948, 2025)
     plt.ylabel('Mean Annual Temperature (deg C)')
-    plt.title('Mean Annual Temperature of Sir Seewoosagur Ramgoolam International Airport 1892-2025', size=8)
+    plt.title('Mean Annual Temperature of Macquarie Island Weather Station 1948-2025', size=8)
     plt.savefig(out_path + out_name, dpi=400)
 
 def map(in_da, out_path='', out_name=''):
