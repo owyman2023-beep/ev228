@@ -1,4 +1,3 @@
-import fun_plots as fp
 import fun_import as fi
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -13,7 +12,7 @@ out_path = '/Users/owenwyman/Data/ev228_data/figures/'
 out_fn = '4_proj.png'
 da = fi.import_era5(file_path=path + fn, var='sde')
 
-#input desired year and month (between 1950-2025 / only january, febuary, or march)
+#input desired year and month (between 1950-2025 / only january, febuary, or march / do not change day)
 choose_time = '1984-03-01'
 
 
@@ -39,6 +38,7 @@ ax.add_feature(cf.STATES, linestyle=':')
 ax.add_feature(cf.BORDERS, linestyle='--')
 ax.set_extent([-109.3, -101.8, 36.8, 41.2], crs=ccrs.PlateCarree())
 ax.set_title('Colorado Snow Depth ' + choose_time)
+
 
 mean_da1 = da1.mean()
 # print (mean_da1.item())
