@@ -25,8 +25,7 @@ def map(in_da, out_path='', out_name=''):
     lats = in_da.latitude
     image = plt.pcolormesh(lons, lats, in_da)
 
-    plt.xlabel('longitude')
-    plt.ylabel('latitude')
+
     plt.title('Cumulative Snowfall in Colorado from 1940-2024')
     cb = plt.colorbar(image, shrink=.75, orientation="vertical", pad=.02)
     cb.set_label('in')
